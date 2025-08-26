@@ -1,0 +1,30 @@
+services:
+  mysql:
+    image: mysql:8.0-debian
+    container_name: pythonlab.mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: passw0rd
+      MYSQL_DATABASE: initial-database  
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root --password=root"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin:5.2.1
+    container_name: pythonlab.phpmyadmin
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: passw0rd
+      PMA_PMADB: initial-database
+      PMA_ARBITRARY: 1
+    depends_on:
+      mysql:
+        condition: service_healthy
+         

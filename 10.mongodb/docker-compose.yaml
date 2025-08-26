@@ -1,7 +1,7 @@
 services:
   mongo:
     image: mongo
-    container_name: mongodb
+    container_name: pythonlab.mongodb
     ports:
       - 27017:27017
     environment:
@@ -10,7 +10,7 @@ services:
 
   mongo-express:
     image: mongo-express
-    container_name: mongo-express
+    container_name: pythonlab.mongo-express
     ports:
       - 8081:8081
     environment:
