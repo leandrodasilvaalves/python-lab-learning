@@ -4,7 +4,6 @@ services:
     container_name: pythonlab.mysql
     environment:
       MYSQL_ROOT_PASSWORD: passw0rd
-      MYSQL_DATABASE: initial-database  
     ports:
       - "3306:3306"
     healthcheck:
@@ -22,7 +21,6 @@ services:
       PMA_HOST: mysql
       PMA_USER: root
       PMA_PASSWORD: passw0rd
-      PMA_PMADB: initial-database
       PMA_ARBITRARY: 1
     depends_on:
       mysql:
