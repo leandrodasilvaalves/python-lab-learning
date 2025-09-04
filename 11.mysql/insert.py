@@ -1,9 +1,9 @@
-import mysqlhelper as helper
+import helper
 
 connection = helper.create_connection()
 cursor = connection.cursor()
 
-helper.create_database(cursor, "insert_class_db")
+helper.create_database(cursor, "mycompay_db")
 helper.create_table(cursor, "customers")
 helper.show_databases(cursor)
 helper.show_tables(cursor)
