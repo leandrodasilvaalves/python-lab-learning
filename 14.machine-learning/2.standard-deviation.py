@@ -6,8 +6,11 @@ import numpy as np
 import math
 
 speed = [86, 87, 88, 86, 87, 85, 86]
-x = np.std(speed)
-print("deviation: ", x)
+deviation = np.std(speed)
+print("deviation: ", deviation)
+
+variance = np.var(speed)
+print("variance:", variance)
 
 # que tal calcular o desvio manualmente 
 # pra entender o que acontece aqui?
@@ -64,7 +67,6 @@ def calculate_deviation(speed):
 
 
 calculate_deviation([86, 87, 88, 86, 87, 85, 86])
-calculate_deviation([60, 90, 88, 75, 87, 98, 60])
-calculate_deviation([20, 87, 55, 86, 10, 85, 120])
+# calculate_deviation([60, 90, 88, 75, 87, 98, 60])
+# calculate_deviation([20, 87, 55, 86, 10, 85, 120])
 
-# CONTINUAR EM Variance - nesta mesma pagina
